@@ -36,12 +36,12 @@ nmap 127.0.0.1
 
 The scan identified the following open TCP ports:
 
-Port	State	Service
-135/tcp	open	msrpc
-445/tcp	open	microsoft-ds
-1433/tcp	open	ms-sql-s
-1434/tcp	open	ms-sql-m
-2179/tcp	open	vmrdp
+Port	    State	 Service
+135/tcp	  open	 msrpc
+445/tcp	  open	 microsoft-ds
+1433/tcp	open	 ms-sql-s
+1434/tcp	open	 ms-sql-m
+2179/tcp	open	 vmrdp
 
 The scan also showed 995 closed TCP ports.
 
@@ -54,11 +54,11 @@ nmap -sV 127.0.0.1
 The detected services included:
 
 Port	    Service	            Version / Information
-135/tcp 	msrpc	        Microsoft Windows RPC
-445/tcp	    microsoft-ds	Version not identified
-1433/tcp	ms-sql-s	    Microsoft SQL Server
-1434/tcp	ms-sql-m	    Version not identified
-2179/tcp	vmrdp	        Version not identified
+135/tcp 	msrpc	              Microsoft Windows RPC
+445/tcp	  microsoft-ds	      Version not identified
+1433/tcp	ms-sql-s	          Microsoft SQL Server
+1434/tcp	ms-sql-m	          Version not identified
+2179/tcp	vmrdp	              Version not identified
 
 Nmap identified the operating system as Windows.
 
