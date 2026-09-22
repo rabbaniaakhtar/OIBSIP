@@ -1,0 +1,248 @@
+OASIS INFOBYTE - SECURITY ANALYST
+TASK 1: BASIC NETWORK SCANNING WITH NMAP
+==================================================
+
+Target:
+127.0.0.1 (localhost)
+
+Scan Type:
+Localhost Network Scan
+
+Date:
+September 21, 2026
+
+
+==================================================
+1. BASIC NMAP SCAN
+==================================================
+
+Command:
+nmap 127.0.0.1
+
+Result:
+
+Starting Nmap 7.991
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00062s latency).
+
+Not shown: 995 closed tcp ports (reset)
+
+PORT     STATE SERVICE
+135/tcp  open  msrpc
+445/tcp  open  microsoft-ds
+1433/tcp open  ms-sql-s
+1434/tcp open  ms-sql-m
+2179/tcp open  vmrdp
+
+Nmap done: 1 IP address (1 host up) scanned in 0.48 seconds.
+
+
+==================================================
+2. SERVICE VERSION DETECTION
+==================================================
+
+Command:
+nmap -sV 127.0.0.1
+
+Result:
+
+Starting Nmap 7.991
+
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00039s latency).
+
+Not shown: 995 closed tcp ports (reset)
+
+PORT     STATE SERVICE       VERSION
+135/tcp  open  msrpc         Microsoft Windows RPC
+445/tcp  open  microsoft-ds?
+1433/tcp open  ms-sql-s      Microsoft SQL Server
+1434/tcp open  ms-sql-m?
+2179/tcp open  vmrdp?
+
+Service Info:
+OS: Windows
+CPE: cpe:/o:microsoft:windows
+
+Nmap reported:
+1 service unrecognized despite returning data.
+
+The exact version of the unrecognized service was not assumed
+or added to this report.
+
+Service detection was performed by Nmap 7.991.
+
+
+==================================================
+3. OS DETECTION
+==================================================
+
+Command:
+nmap -O 127.0.0.1
+
+Result:
+
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00098s latency).
+
+Not shown: 995 closed tcp ports (reset)
+
+PORT     STATE SERVICE
+135/tcp  open  msrpc
+445/tcp  open  microsoft-ds
+1433/tcp open  ms-sql-s
+1434/tcp open  ms-sql-m
+2179/tcp open  vmrdp
+
+Device type:
+general purpose
+
+Running:
+Microsoft Windows 10
+
+OS CPE:
+cpe:/o:microsoft:windows_10
+
+OS details:
+Microsoft Windows 10 1809 - 21H2
+
+Network Distance:
+0 hops
+
+Note:
+The operating system information above is the result of
+Nmap OS detection.
+
+
+==================================================
+4. OPEN PORT SUMMARY
+==================================================
+
+Port 135/tcp
+Service: msrpc
+Identified as: Microsoft Windows RPC
+
+Port 445/tcp
+Service: microsoft-ds
+Version: Not identified
+
+Port 1433/tcp
+Service: ms-sql-s
+Identified as: Microsoft SQL Server
+
+Port 1434/tcp
+Service: ms-sql-m
+Version: Not identified
+
+Port 2179/tcp
+Service: vmrdp
+Version: Not identified
+
+
+==================================================
+5. SCAN SUMMARY
+==================================================
+
+Target scanned:
+127.0.0.1 (localhost)
+
+Host status:
+Up
+
+Open TCP ports:
+5
+
+Closed TCP ports:
+995
+
+Open ports identified:
+
+135/tcp
+445/tcp
+1433/tcp
+1434/tcp
+2179/tcp
+
+Detected operating system:
+Microsoft Windows 10
+
+Nmap OS details:
+Microsoft Windows 10 1809 - 21H2
+
+Network distance:
+0 hops
+
+
+==================================================
+6. SECURITY OBSERVATIONS
+==================================================
+
+1. The scan identified five open TCP ports on the local system.
+
+2. Port 135/tcp is associated with Microsoft Windows RPC.
+
+3. Port 445/tcp is associated with Microsoft-DS and Windows
+   networking/SMB functionality.
+
+4. Port 1433/tcp was identified as Microsoft SQL Server.
+
+5. Port 1434/tcp was identified as Microsoft SQL Server-related
+   functionality, but the exact version was not identified.
+
+6. Port 2179/tcp was identified by Nmap as vmrdp, but the exact
+   service version was not identified.
+
+7. Open network services can increase the system's exposed
+   attack surface if they are accessible from unauthorized
+   networks.
+
+8. Services that are not required should be disabled or
+   appropriately restricted.
+
+9. Firewall rules can be used to restrict unnecessary network
+   access.
+
+10. Systems and network services should be kept updated and
+    monitored.
+
+
+==================================================
+7. ETHICAL CONSIDERATION
+==================================================
+
+This Nmap scan was performed against:
+
+127.0.0.1 (localhost)
+
+The target represents the local machine.
+
+Network scanning should only be performed on systems that are
+owned by the tester or where explicit authorization has been
+provided.
+
+No external or unauthorized system was targeted during this
+scan.
+
+
+==================================================
+8. SCREENSHOTS
+==================================================
+
+The following screenshots are included in the project:
+
+01-nmap-installation.png
+    Shows successful Nmap installation and version information.
+
+02-basic-scan.png
+    Shows the basic Nmap scan of 127.0.0.1.
+
+03-service-scan.png
+    Shows service and version detection using Nmap -sV.
+
+04-os-detection.png
+    Shows operating system detection using Nmap -O.
+
+
+==================================================
+END OF NMAP SCAN RESULTS
+==================================================
